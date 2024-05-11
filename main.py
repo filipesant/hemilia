@@ -41,12 +41,15 @@ class Hemilia:
         prompt = input(color_text(TextColor.ORANGE.value, "User: "))
         # print(color_text(TextColor.ORANGE.value, prompt))
 
-        while prompt != "fim":
+        while prompt.upper() != "FIM":
             response = chat.send_message(prompt)
             print(color_text(TextColor.GREEN.value, "Hemília:"))
             print(color_text(TextColor.GREEN.value, response.text))
             prompt = input(color_text(TextColor.ORANGE.value, "User: "))
 
+        print(color_text(TextColor.GREEN.value, "Hemília:"))
+        response = chat.send_message(prompt)
+        print(color_text(TextColor.GREEN.value, response.text))
 
     def load_history_from_file(self, file_name):
         with open(file_name) as f:
