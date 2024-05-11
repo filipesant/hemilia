@@ -19,7 +19,7 @@ A Hemília pode te auxiliar com informações sobre:
 
 # Descrição do Projeto
 
-Projeto desenvolvido para participação no Desafio Imersão IA promovido pela Alura e Google. Nele fomos apresentados ao GEMINI e ao Studio AI, ferramentas da Google para desenvolvimento de aplicações com a força e inovação de Liguagens e Modelos Generativos.
+Projeto desenvolvido para participação no Desafio Imersão IA promovido pela Alura e Google. Nele fomos apresentados ao GEMINI e ao Studio AI, ferramentas da Google para desenvolvimento de aplicações com a força e inovação das Liguagens e Modelos Generativos.
 
 O Desafio era aplicar os conteúdo ensinados no curso em uma aplicação de sua prórpia autoria. Para o desafio foi criado uma assistente virtual para auxiliar pessoas que cuidam ou portam a Hemofilia. Com um apelo social a Hemília visa aplicar os conhecimentos de IA em uma aplicação prática e fácil de consultar. Em funcionalidades futuras também será possível utilizá-la como uma agenda pessoal.
 
@@ -54,6 +54,10 @@ Para criar a aplicação seguimos os seguintes passos:
 
         git clone https://github.com/filipesant/hemilia.git
 
+2. API_KEY:
+
+    Não esqueça de substituir no código sua API_KEY obtida pelo Google Studio AI;
+
 2. Baixar dependências do projeto:
         
         pip install -r requirements.txt
@@ -72,3 +76,4 @@ Você pode testar as seguintes perguntas:
 - Perguntar como é feito cálculo de quantidade do fator:
 ![alt text](pictures/COMANDO_FATOR_8.png)
 - Digite "FIM" para finalizar;
+![alt text](pictures/COMANDO_FIM.png)
