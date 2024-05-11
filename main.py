@@ -10,6 +10,15 @@ from IPython.display import Markdown
 
 import os
 from dotenv import load_dotenv
+from enum import Enum
+
+class TextColor(Enum):
+    GREEN = '\033[92m'
+    ORANGE = '\033[93m'
+    WHITE = '\033[39m'
+
+def color_text(color: TextColor, text:str):
+    return color + text + TextColor.WHITE.value
 
 class Hemilia:
     def __init__(self):
@@ -29,12 +38,14 @@ class Hemilia:
     def start_chat(self, history):
         self.add_to_history("Se apresente como Hemília, uma assistente pessoal para informações sobre Hemofilia e Responda de acordo com as informações fornecidas", history=history)
         chat = self.model.start_chat(history=history)
-        prompt = input('Esperando prompt: ')
+        prompt = input(color_text(TextColor.ORANGE.value, "User: "))
+        # print(color_text(TextColor.ORANGE.value, prompt))
 
         while prompt != "fim":
             response = chat.send_message(prompt)
-            print("Resposta:", response.text, '\n\n')
-            prompt = input('Esperando prompt: ')
+            print(color_text(TextColor.GREEN.value, "Hemília:"))
+            print(color_text(TextColor.GREEN.value, response.text))
+            prompt = input(color_text(TextColor.ORANGE.value, "User: "))
 
 
     def load_history_from_file(self, file_name):
